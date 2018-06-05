@@ -39,25 +39,6 @@ static void display(void)
         glScalef(0.4,0.4,3);
         glutSolidCube(1);
     glPopMatrix();
-
-    glPushMatrix();
-    glColor3d(1,0,1);
-        glTranslated(0,1.2,-6);
-        //glRotated(x,0,x,1);
-        glScalef(1,1,0.3);
-        glutWireSphere(1.5,16,16);
-
-        glRotated(60,0,0,45);
-        glRotated(a,0,0,1);
-        glScalef(0.7,0.7,0.7);
-        glutSolidTorus(1,1,slices,stacks);
-        glRotated(60,0,0,90);
-        glutSolidTorus(1,1,slices,stacks);
-        glScalef(0.8,0.8,0.8);
-        glutSolidSphere(1,slices+6,stacks+6);
-    glPopMatrix();
-
-
     glutSwapBuffers();
 }
 
