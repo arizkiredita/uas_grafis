@@ -85,7 +85,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glTranslatef(-0.15f, 0.0f, -0.3f);
             gl.glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
             gl.glRotatef(-angel, 0.0f, 0.0f, 1.0f);
-            angel += 0.5;
+            angel += 0.3;
             Objek.balingbaling(gl);
             gl.glPopMatrix();
             
