@@ -1,2 +1,2 @@
-/the_fan/nbproject/private/
-/the_fan/build/
+build/*
+nbproject/*
