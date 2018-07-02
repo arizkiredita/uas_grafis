@@ -90,6 +90,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
             gl.glPushMatrix();
             
+<<<<<<< HEAD
             Objek.Tiang(gl);
             gl.glPopMatrix();
 
@@ -97,6 +98,13 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glTranslatef(0f, 5f, -0f);
             gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
             gl.glRotatef(angle, 0f, 0f, 5.0f);
+=======
+    gl.glPushMatrix();
+            gl.glTranslatef(-0.15f, 0.0f, -0.3f);
+            gl.glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+            gl.glRotatef(-angel, 0.0f, 0.0f, 1.0f);
+            angel += 0.3;
+>>>>>>> 26d7019024f1b69af1d43b5836696f367e4322a8
             Objek.balingbaling(gl);
             gl.glPopMatrix();
 
