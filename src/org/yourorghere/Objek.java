@@ -67,14 +67,26 @@ glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
         gl.glBegin(GL.GL_TRIANGLES);
         gl.glColor3f(1.0f, 0.0f,0.0f); // Set the current drawing color to red
             gl.glVertex3f(0f, 0f, 0.0f);   // Top
-            gl.glVertex3f(-0.75f, -1f, 0.0f); // Bottom Left
-            gl.glVertex3f(0.75f, -1f , 0.0f);  // Bottom Right
+            gl.glVertex3f(-1f, 3f, 0.0f); // Bottom Left
+            gl.glVertex3f(1f, 3f , 0.0f);  // Bottom Right
         gl.glEnd();
             gl.glBegin(GL.GL_TRIANGLES);
             gl.glColor3f(1.0f, 0.0f,0.0f);
             gl.glVertex3f(0f, 0f, 0.0f);   // Top
-            gl.glVertex3f(-0.75f, 1f, 0.0f); // Bottom Left
-            gl.glVertex3f(0.75f, 1f, 0.0f);  // Bottom Right
+            gl.glVertex3f(-1f, -3f, 0.0f); // Bottom Left
+            gl.glVertex3f(1f, -3f, 0.0f);  // Bottom Right
+        gl.glEnd();
+        
+        gl.glBegin(GL.GL_TRIANGLES);
+        gl.glVertex3f(0f, 0f, 0f);
+        gl.glVertex3f(3f, 1f, 0f);
+        gl.glVertex3f(3f, -1f, 0f);
+        gl.glEnd();
+        
+        gl.glBegin(GL.GL_TRIANGLES);
+        gl.glVertex3f(0f, 0f, 0f);
+        gl.glVertex3f(-3f, 1f, 0f);
+        gl.glVertex3f(-3f, -1f, 0f);
         gl.glEnd();
     }
 //   static void bawah(GL gl){
