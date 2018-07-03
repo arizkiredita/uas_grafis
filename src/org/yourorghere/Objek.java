@@ -63,7 +63,7 @@ gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
 glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
 //lingkaran untuk tutup bawah
 }
-   static void balingbaling(GL gl){
+  static void balingbaling(GL gl){
         gl.glBegin(GL.GL_TRIANGLES);
         gl.glColor3f(1.0f, 0.0f,0.0f); // Set the current drawing color to red
             gl.glVertex3f(0f, 0f, 0.0f);   // Top

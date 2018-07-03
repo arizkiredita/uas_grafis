@@ -67,7 +67,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
     public void display(GLAutoDrawable drawable) {
             GL gl = drawable.getGL();
             GLU glu = new GLU();
-            Objek = new Objek();
+            Objek= new Objek();
             // Clear the drawing area
             gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
             // Reset the current matrix to the "identity"
@@ -89,8 +89,6 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glTranslatef(0f, 0f, 0.0f);
             gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
             gl.glPushMatrix();
-            
-<<<<<<< HEAD
             Objek.Tiang(gl);
             gl.glPopMatrix();
 
@@ -98,13 +96,6 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glTranslatef(0f, 5f, -0f);
             gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
             gl.glRotatef(angle, 0f, 0f, 5.0f);
-=======
-    gl.glPushMatrix();
-            gl.glTranslatef(-0.15f, 0.0f, -0.3f);
-            gl.glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
-            gl.glRotatef(-angel, 0.0f, 0.0f, 1.0f);
-            angel += 0.3;
->>>>>>> 26d7019024f1b69af1d43b5836696f367e4322a8
             Objek.balingbaling(gl);
             gl.glPopMatrix();
 
