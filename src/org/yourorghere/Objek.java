@@ -4,14 +4,15 @@ import javax.media.opengl.glu.GLU;
 import javax.media.opengl.glu.GLUquadric;
 public class Objek {
     
-    static void Tiang(GL gl){
-        float BODY_LENGTH=3.0f;
-        float BODY_RADIUS=0.4f;
+//tiang
+   static void Tiang(GL gl){
+        float BODY_LENGTH=8f;
+        float BODY_RADIUS=1f;
         GLU glu=new GLU();
         int SLICES=30;
         int STACKS=30;
         double clip_plane1[]={0.0, 0.0, -1.0, 0.0};
-        gl.glColor3f(0,1,0);
+        gl.glColor3f(0.90f, 0.91f ,0.98f);
         gl.glClipPlane(GL.GL_CLIP_PLANE1, clip_plane1,0);
         gl.glEnable(GL.GL_CLIP_PLANE1);
         GLUquadric qd=glu.gluNewQuadric();
@@ -29,29 +30,91 @@ public class Objek {
         glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
         glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
     }
-    
-    static void balingbaling(GL gl){
+   //tutup mesin
+   static void setengahlingkaran(GL gl){
+        float BODY_RADIUS=0.2f;
+        int SLICES=10;
+        int STACKS=10;
+        GLU glu=new GLU();
+        gl.glColor3f(1,0,0);
+        GLUquadric q=glu.gluNewQuadric();
+         glu.gluDisk(q, 0.0f, 1.0f, SLICES, STACKS);
+        double clip_plane1[]={0.0,0.0,-1.0,0.0};
+        gl.glClipPlane(GL.GL_CLIP_PLANE1,clip_plane1,0);
+        gl.glEnable(GL.GL_CLIP_PLANE1);
+        // drawing a sphere
+        GLUquadric qd=glu.gluNewQuadric();
+        glu.gluSphere(qd,1f,20,20);
+        glu.gluDeleteQuadric(qd);
+        gl.glDisable(GL.GL_CLIP_PLANE1);
+    }
+   //kepala
+   static void tabung(GL gl){
+        float BODY_LENGTH=2.0f;
+        float BODY_RADIUS=1.0f;
+        int SLICES=30;
+        int STACKS=30; 
+        GLU glu=new GLU();
+        gl.glColor3f(0f,0f,0.61f);
+        GLUquadric q=glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS, 
+        BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        //lingkaran untuk tutup atas
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+//lingkaran untuk tutup bawah
+}
+  static void balingbaling(GL gl){
         gl.glBegin(GL.GL_TRIANGLES);
-        gl.glColor3f(1.0f, 0.0f,0.0f); // Set the current drawing color to red
+        gl.glColor3f(0.30f, 0.30f,1f); // Set the current drawing color to red
             gl.glVertex3f(0f, 0f, 0.0f);   // Top
-            gl.glVertex3f(-0.75f, -1f, 0.0f); // Bottom Left
-            gl.glVertex3f(0.75f, -1f , 0.0f);  // Bottom Right
+            gl.glVertex3f(-1f, 3f, 0.0f); // Bottom Left
+            gl.glVertex3f(1f, 3f , 0.0f);  // Bottom Right
         gl.glEnd();
             gl.glBegin(GL.GL_TRIANGLES);
-            gl.glColor3f(1.0f, 0.0f,0.0f);
+            //gl.glColor3f(0.52f, 0.39f, 0.39f);
             gl.glVertex3f(0f, 0f, 0.0f);   // Top
-            gl.glVertex3f(-0.75f, 1f, 0.0f); // Bottom Left
-            gl.glVertex3f(0.75f, 1f, 0.0f);  // Bottom Right
+            gl.glVertex3f(-1f, -3f, 0.0f); // Bottom Left
+            gl.glVertex3f(1f, -3f, 0.0f);  // Bottom Right
+        gl.glEnd();
+            gl.glBegin(GL.GL_TRIANGLES);
+            gl.glVertex3f(0f, 0f, 0f);
+            gl.glVertex3f(3f, 1f, 0f);
+            gl.glVertex3f(3f, -1f, 0f);
+        gl.glEnd();
+            gl.glBegin(GL.GL_TRIANGLES);
+            gl.glVertex3f(0f, 0f, 0f);
+            gl.glVertex3f(-3f, 1f, 0f);
+            gl.glVertex3f(-3f, -1f, 0f);
         gl.glEnd();
     }
-    static void Tombol(GL gl){
-        float BODY_RADIUS=0.1f;
+  //alas
+   static void bawah(GL gl){
+        float BODY_LENGTH=0.3f;
+        float BODY_RADIUS=3.5f;
+        int SLICES=30;
+        int STACKS=30; 
+        GLU glu=new GLU();
+        gl.glColor3f(1.5f,0,0.5f);
+        GLUquadric q=glu.gluNewQuadric();
+        glu.gluCylinder(q, BODY_RADIUS, BODY_RADIUS, 
+        BODY_LENGTH, SLICES, STACKS);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+        //lingkaran untuk tutup atas
+        gl.glTranslatef(0.0f, 0.0f, BODY_LENGTH);
+        glu.gluDisk(q, 0.0f, BODY_RADIUS, SLICES, STACKS);
+   }
+   //tombol
+   static void Tombol(GL gl){
+        float BODY_RADIUS=0.2f;
         int SLICES=50;
         int STACKS=50;
         GLU glu=new GLU();
         GLUquadric q=glu.gluNewQuadric();
         gl.glColor3f(0,0,0);
         glu.gluSphere(q, BODY_RADIUS, SLICES, STACKS);
-            }
-
+    }
+   
+   
 }

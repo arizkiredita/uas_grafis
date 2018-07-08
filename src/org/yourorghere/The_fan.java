@@ -19,7 +19,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             GLCanvas canvas = new GLCanvas();
             canvas.addGLEventListener(new The_fan());
             frame.add(canvas);
-            frame.setSize(640, 480);
+            frame.setSize(1280, 800);
             final Animator animator = new Animator(canvas);
             frame.addWindowListener(new WindowAdapter() {
             @Override
@@ -38,8 +38,8 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             frame.setVisible(true);
             animator.start();
             }
-    private float angel =0;
-    private Objek Objek;
+   float angle = 1;
+   float direction = 1;
     public void init(GLAutoDrawable drawable) {
         GL gl = drawable.getGL();
         gl.glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
@@ -49,7 +49,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
         gl.glEnable(GL.GL_COLOR_MATERIAL);
         gl.glEnable(GL.GL_DEPTH_TEST);
         gl.glEnable(GL.GL_NORMALIZE);
-            }
+    }
     public void reshape(GLAutoDrawable drawable, int x, int y, int width, int height) {
             GL gl = drawable.getGL();
             GLU glu = new GLU();
@@ -67,43 +67,85 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
     public void display(GLAutoDrawable drawable) {
             GL gl = drawable.getGL();
             GLU glu = new GLU();
-            Objek= new Objek();
+            Objek Objek = new Objek();
             // Clear the drawing area
             gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
             // Reset the current matrix to the "identity"
             gl.glLoadIdentity();
-            gl.glTranslatef(0.0f, 0.5f, -10.0f);
-            gl.glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
-            gl.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+//            gl.glTranslatef(0.0f, 0.5f, -10.0f);
+//            gl.glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+//            gl.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+            
+           
+            
+            gl.glTranslatef(0.0f, 2.5f, -20.0f);
+            gl.glRotatef(0f, 0f, 0f, 0.0f);
+//            gl.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
 
-//            
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 0f, 0.0f);
+            gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
+            Objek.setengahlingkaran(gl);
+            gl.glPopMatrix();
+
+            gl.glPushMatrix();
+            Objek.tabung(gl);
+            gl.glPopMatrix();
+
+            gl.glTranslatef(0f, 0f, 0.0f);
+            gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
             gl.glPushMatrix();
             Objek.Tiang(gl);
             gl.glPopMatrix();
-            
-    gl.glPushMatrix();
-            gl.glTranslatef(-0.15f, 0.0f, -0.3f);
-            gl.glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
-            gl.glRotatef(-angel, 0.0f, 0.0f, 1.0f);
-            angel += 0.3;
+
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 5f, -0f);
+            gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
+            gl.glRotatef(angle, 0f, 0f, 5.0f);
             Objek.balingbaling(gl);
             gl.glPopMatrix();
-            
-    gl.glPushMatrix();
-            gl.glTranslatef(-0.10f, 0.45f, 0.45f);
+
+            gl.glTranslatef(0f, 0f, 0.0f);
+            gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
+            gl.glPushMatrix();
+            //Objek.tabung(gl);
+            gl.glPopMatrix();
+            angle +=direction;
+            if(angle>10){
+                direction=-direction;
+            }else if(angle<-50){
+                direction=-direction;
+            }
+            angle += 1f;
+
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 4f, -2f);
             Objek.Tombol(gl);
             gl.glPopMatrix();
             
-    gl.glPushMatrix();
-            gl.glTranslatef(-0.10f, 0.45f, 0.95f);
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 5f, -2f);
             Objek.Tombol(gl);
             gl.glPopMatrix();
             
-    gl.glPushMatrix();
-            gl.glTranslatef(-0.10f, 0.45f, 1.45f);
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 6f, -2f);
             Objek.Tombol(gl);
             gl.glPopMatrix();
-    gl.glFlush();
+            
+            //alas tabung tipis
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, -1.0f, 0f);
+            gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
+            Objek.Tombol(gl);
+            gl.glPopMatrix();
+            
+            gl.glTranslatef(0f, 7.5f, -1.0f);
+            gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
+            gl.glPushMatrix();
+            Objek.bawah(gl);
+            gl.glPopMatrix();
+            gl.glFlush();
 }
     public void displayChanged(GLAutoDrawable drawable, boolean modeChanged, boolean deviceChanged) {
             }
