@@ -72,6 +72,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
             // Reset the current matrix to the "identity"
             gl.glLoadIdentity();
+<<<<<<< HEAD
 //            gl.glTranslatef(0.0f, 0.5f, -10.0f);
 //            gl.glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
 //            gl.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
@@ -85,6 +86,15 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glPushMatrix();
             gl.glTranslatef(0f, 0f, 0.0f);
             gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
+=======
+           
+            
+            gl.glTranslatef(0.0f, 0.5f, -20.0f);
+            gl.glRotatef(0f, 1.0f, 0.0f, 0.0f);
+//            gl.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
+
+            gl.glPushMatrix();
+>>>>>>> 3f53cff663b3ca244eaa10924eccd57fc422fe0e
             Objek.setengahlingkaran(gl);
             gl.glPopMatrix();
 
@@ -108,6 +118,7 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glTranslatef(0f, 0f, 0.0f);
             gl.glRotatef(90f, 1.0f, 0.0f, 0.0f);
             gl.glPushMatrix();
+<<<<<<< HEAD
             //Objek.tabung(gl);
             gl.glPopMatrix();
             angle +=direction;
@@ -125,10 +136,26 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             
             gl.glPushMatrix();
             gl.glTranslatef(0f, 5f, -2f);
+=======
+            
+            //Objek.bawah(gl);
+            gl.glPopMatrix();
+            angle +=direction;
+            if(angle>10){
+                direction=-direction;
+            }else if(angle<-50){
+                direction=-direction;
+            }
+            angle += 1f;
+
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 2f, -2f);
+>>>>>>> 3f53cff663b3ca244eaa10924eccd57fc422fe0e
             Objek.Tombol(gl);
             gl.glPopMatrix();
             
             gl.glPushMatrix();
+<<<<<<< HEAD
             gl.glTranslatef(0f, 6f, -2f);
             Objek.Tombol(gl);
             gl.glPopMatrix();
@@ -145,6 +172,16 @@ public class The_fan implements GLEventListener,MouseListener,MouseMotionListene
             gl.glPushMatrix();
             Objek.bawah(gl);
             gl.glPopMatrix();
+=======
+            gl.glTranslatef(0f, 3f, -2f);
+            Objek.Tombol(gl);
+            gl.glPopMatrix();
+            
+            gl.glPushMatrix();
+            gl.glTranslatef(0f, 4f, -2f);
+            Objek.Tombol(gl);
+            gl.glPopMatrix();
+>>>>>>> 3f53cff663b3ca244eaa10924eccd57fc422fe0e
             gl.glFlush();
 }
     public void displayChanged(GLAutoDrawable drawable, boolean modeChanged, boolean deviceChanged) {
